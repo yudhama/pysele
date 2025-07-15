@@ -1,0 +1,334 @@
+2025-07-10 17:27:01,453 - INFO - 🚀 Starting full automation workflow...
+2025-07-10 17:27:01,454 - INFO - Setting up Chrome driver...
+2025-07-10 17:27:01,454 - INFO - ====== WebDriver manager ======
+2025-07-10 17:27:01,626 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 17:27:01,694 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 17:27:01,756 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.94/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-10 17:27:02,658 - INFO - ✅ Chrome driver setup successful
+2025-07-10 17:27:02,659 - INFO - 🔑 Starting login process...
+2025-07-10 17:27:02,659 - INFO - 🌐 Navigating to CURA Healthcare website...
+2025-07-10 17:27:06,617 - INFO - ✅ Successfully navigated to website
+2025-07-10 17:27:07,005 - INFO - ✅ Clicked Make Appointment button
+2025-07-10 17:27:07,107 - INFO - ✅ Entered text in username field
+2025-07-10 17:27:07,200 - INFO - ✅ Entered text in password field
+2025-07-10 17:27:07,242 - INFO - ✅ Clicked login button
+2025-07-10 17:27:07,779 - INFO - ✅ Login successful!
+2025-07-10 17:27:07,779 - INFO - 📅 Starting appointment booking...
+2025-07-10 17:27:07,850 - INFO - ✅ Selected facility: Seoul CURA Healthcare Center
+2025-07-10 17:27:07,891 - INFO - ✅ Enabled hospital readmission
+2025-07-10 17:27:07,934 - INFO - ✅ Clicked healthcare program: Medicaid
+2025-07-10 17:27:08,552 - INFO - ✅ Set visit date: 25/07/2025
+2025-07-10 17:27:08,589 - INFO - ✅ Entered text in comment field
+2025-07-10 17:27:08,666 - INFO - ✅ Clicked Book Appointment button
+2025-07-10 17:27:08,946 - INFO - 🎉 Appointment booking successful!
+2025-07-10 17:27:09,356 - INFO - 📸 Screenshot saved: appointment_confirmation.png
+2025-07-10 17:27:09,356 - INFO - 📋 Extracting appointment details...
+2025-07-10 17:27:09,402 - INFO - ✅ Appointment details extracted successfully
+2025-07-10 17:27:09,402 - INFO - 📋 Appointment Details:
+2025-07-10 17:27:09,402 - INFO -    FACILITY: Seoul CURA Healthcare Center
+2025-07-10 17:27:09,402 - INFO -    READMISSION: Yes
+2025-07-10 17:27:09,402 - INFO -    PROGRAM: Medicaid
+2025-07-10 17:27:09,402 - INFO -    VISIT_DATE: 25/07/2025
+2025-07-10 17:27:09,402 - INFO -    COMMENT: Follow-up appointment for check-up
+2025-07-10 17:27:21,480 - INFO - ✅ Clicked menu toggle
+2025-07-10 17:27:22,045 - INFO - ✅ Clicked logout link
+2025-07-10 17:27:22,046 - INFO - ✅ Logout successful
+2025-07-10 17:27:22,154 - INFO - ✅ Browser closed successfully
+2025-07-10 20:33:55,204 - INFO - 🚀 Starting full automation workflow...
+2025-07-10 20:33:55,204 - INFO - Setting up Chrome driver...
+2025-07-10 20:33:55,205 - INFO - ====== WebDriver manager ======
+2025-07-10 20:33:55,418 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 20:33:55,589 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 20:33:55,711 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.94/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-10 20:33:58,284 - INFO - ✅ Chrome driver setup successful
+2025-07-10 20:33:58,285 - INFO - 🔑 Starting login process...
+2025-07-10 20:33:58,286 - INFO - 🌐 Navigating to CURA Healthcare website...
+2025-07-10 20:34:00,918 - INFO - ✅ Successfully navigated to website
+2025-07-10 20:34:01,377 - INFO - ✅ Clicked Make Appointment button
+2025-07-10 20:34:01,490 - INFO - ✅ Entered text in username field
+2025-07-10 20:34:01,597 - INFO - ✅ Entered text in password field
+2025-07-10 20:34:02,182 - INFO - ✅ Clicked login button
+2025-07-10 20:34:02,189 - INFO - ✅ Login successful!
+2025-07-10 20:34:02,189 - INFO - 📅 Starting appointment booking...
+2025-07-10 20:34:02,256 - INFO - ✅ Selected facility: Seoul CURA Healthcare Center
+2025-07-10 20:34:02,295 - INFO - ✅ Enabled hospital readmission
+2025-07-10 20:34:02,340 - INFO - ✅ Clicked healthcare program: Medicaid
+2025-07-10 20:34:02,929 - INFO - ✅ Set visit date: 25/07/2025
+2025-07-10 20:34:02,968 - INFO - ✅ Entered text in comment field
+2025-07-10 20:34:03,018 - INFO - ✅ Clicked Book Appointment button
+2025-07-10 20:34:23,589 - ERROR - Element not found: ('xpath', "//h2[contains(text(), 'Appointment Confirmation')]")
+2025-07-10 20:34:23,589 - ERROR - ❌ Appointment booking failed: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001033ace6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x00000001033a4d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x0000000102ef63ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x0000000102f3d544 cxxbridge1$string$len + 381808
+4   chromedriver                        0x0000000102f7e934 cxxbridge1$string$len + 649056
+5   chromedriver                        0x0000000102f31834 cxxbridge1$string$len + 333408
+6   chromedriver                        0x000000010336ff88 cxxbridge1$str$ptr + 2473268
+7   chromedriver                        0x00000001033731f4 cxxbridge1$str$ptr + 2486176
+8   chromedriver                        0x00000001033519d0 cxxbridge1$str$ptr + 2348924
+9   chromedriver                        0x0000000103373ab0 cxxbridge1$str$ptr + 2488412
+10  chromedriver                        0x0000000103342a60 cxxbridge1$str$ptr + 2287628
+11  chromedriver                        0x00000001033939a0 cxxbridge1$str$ptr + 2619212
+12  chromedriver                        0x0000000103393b2c cxxbridge1$str$ptr + 2619608
+13  chromedriver                        0x00000001033a49b0 cxxbridge1$str$ptr + 2688860
+14  libsystem_pthread.dylib             0x000000018346ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000183469b80 thread_start + 8
+
+2025-07-10 20:34:23,750 - INFO - 📸 Screenshot saved: appointment_error.png
+2025-07-10 20:34:23,950 - INFO - ✅ Browser closed successfully
+2025-07-10 20:34:39,749 - INFO - 🚀 Starting full automation workflow...
+2025-07-10 20:34:39,749 - INFO - Setting up Chrome driver...
+2025-07-10 20:34:39,750 - INFO - ====== WebDriver manager ======
+2025-07-10 20:34:39,905 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 20:34:40,041 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 20:34:40,204 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.94/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-10 20:34:42,246 - INFO - ✅ Chrome driver setup successful
+2025-07-10 20:34:42,246 - INFO - 🔑 Starting login process...
+2025-07-10 20:34:42,249 - INFO - 🌐 Navigating to CURA Healthcare website...
+2025-07-10 20:34:44,993 - INFO - ✅ Successfully navigated to website
+2025-07-10 20:34:45,440 - INFO - ✅ Clicked Make Appointment button
+2025-07-10 20:34:45,549 - INFO - ✅ Entered text in username field
+2025-07-10 20:34:45,687 - INFO - ✅ Entered text in password field
+2025-07-10 20:34:45,736 - INFO - ✅ Clicked login button
+2025-07-10 20:34:46,271 - INFO - ✅ Login successful!
+2025-07-10 20:34:46,271 - INFO - 📅 Starting appointment booking...
+2025-07-10 20:34:46,337 - INFO - ✅ Selected facility: Seoul CURA Healthcare Center
+2025-07-10 20:34:46,378 - INFO - ✅ Enabled hospital readmission
+2025-07-10 20:34:46,422 - INFO - ✅ Clicked healthcare program: Medicaid
+2025-07-10 20:34:47,020 - INFO - ✅ Set visit date: 25/07/2025
+2025-07-10 20:34:47,061 - INFO - ✅ Entered text in comment field
+2025-07-10 20:34:47,098 - INFO - ✅ Clicked Book Appointment button
+2025-07-10 20:35:07,715 - ERROR - Element not found: ('xpath', "//h2[contains(text(), 'Appointment Confirmation')]")
+2025-07-10 20:35:07,717 - ERROR - ❌ Appointment booking failed: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001005f0e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x00000001005e8d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x000000010013a3ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x0000000100181544 cxxbridge1$string$len + 381808
+4   chromedriver                        0x00000001001c2934 cxxbridge1$string$len + 649056
+5   chromedriver                        0x0000000100175834 cxxbridge1$string$len + 333408
+6   chromedriver                        0x00000001005b3f88 cxxbridge1$str$ptr + 2473268
+7   chromedriver                        0x00000001005b71f4 cxxbridge1$str$ptr + 2486176
+8   chromedriver                        0x00000001005959d0 cxxbridge1$str$ptr + 2348924
+9   chromedriver                        0x00000001005b7ab0 cxxbridge1$str$ptr + 2488412
+10  chromedriver                        0x0000000100586a60 cxxbridge1$str$ptr + 2287628
+11  chromedriver                        0x00000001005d79a0 cxxbridge1$str$ptr + 2619212
+12  chromedriver                        0x00000001005d7b2c cxxbridge1$str$ptr + 2619608
+13  chromedriver                        0x00000001005e89b0 cxxbridge1$str$ptr + 2688860
+14  libsystem_pthread.dylib             0x000000018346ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000183469b80 thread_start + 8
+
+2025-07-10 20:35:07,829 - INFO - 📸 Screenshot saved: appointment_error.png
+2025-07-10 20:35:07,941 - INFO - ✅ Browser closed successfully
+2025-07-10 21:47:45,999 - INFO - 🚀 Starting full automation workflow...
+2025-07-10 21:47:46,000 - INFO - Setting up Chrome driver...
+2025-07-10 21:47:46,000 - INFO - ====== WebDriver manager ======
+2025-07-10 21:47:46,186 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 21:47:46,278 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 21:47:46,344 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.94/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-10 21:47:48,205 - INFO - ✅ Chrome driver setup successful
+2025-07-10 21:47:48,209 - INFO - 🔑 Starting login process...
+2025-07-10 21:47:48,209 - INFO - 🌐 Navigating to CURA Healthcare website...
+2025-07-10 21:47:50,863 - INFO - ✅ Successfully navigated to website
+2025-07-10 21:47:51,267 - INFO - ✅ Clicked Make Appointment button
+2025-07-10 21:47:51,435 - INFO - ✅ Entered text in username field
+2025-07-10 21:47:51,480 - INFO - ✅ Entered text in password field
+2025-07-10 21:47:52,049 - INFO - ✅ Clicked login button
+2025-07-10 21:47:52,059 - INFO - ✅ Login successful!
+2025-07-10 21:47:52,059 - INFO - 📅 Starting appointment booking...
+2025-07-10 21:47:52,137 - INFO - ✅ Selected facility: Seoul CURA Healthcare Center
+2025-07-10 21:47:52,179 - INFO - ✅ Enabled hospital readmission
+2025-07-10 21:47:52,249 - INFO - ✅ Clicked healthcare program: Medicaid
+2025-07-10 21:47:52,862 - INFO - ✅ Set visit date: 25/07/2025
+2025-07-10 21:47:52,903 - INFO - ✅ Entered text in comment field
+2025-07-10 21:47:52,944 - INFO - ✅ Clicked Book Appointment button
+2025-07-10 21:48:03,959 - ERROR - ❌ Appointment booking failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=138.0.7204.94)
+Stacktrace:
+0   chromedriver                        0x000000010306ce6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x0000000103064d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x0000000102bb63ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x0000000102b90144 chromedriver + 131396
+4   chromedriver                        0x0000000102c2560c cxxbridge1$string$len + 545848
+5   chromedriver                        0x0000000102c3e454 cxxbridge1$string$len + 647808
+6   chromedriver                        0x0000000102bf1834 cxxbridge1$string$len + 333408
+7   chromedriver                        0x000000010302ff88 cxxbridge1$str$ptr + 2473268
+8   chromedriver                        0x00000001030331f4 cxxbridge1$str$ptr + 2486176
+9   chromedriver                        0x00000001030119d0 cxxbridge1$str$ptr + 2348924
+10  chromedriver                        0x0000000103033ab0 cxxbridge1$str$ptr + 2488412
+11  chromedriver                        0x0000000103002a60 cxxbridge1$str$ptr + 2287628
+12  chromedriver                        0x00000001030539a0 cxxbridge1$str$ptr + 2619212
+13  chromedriver                        0x0000000103053b2c cxxbridge1$str$ptr + 2619608
+14  chromedriver                        0x00000001030649b0 cxxbridge1$str$ptr + 2688860
+15  libsystem_pthread.dylib             0x000000018346ec0c _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000183469b80 thread_start + 8
+
+2025-07-10 21:48:03,961 - ERROR - ❌ Failed to take screenshot: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=138.0.7204.94)
+Stacktrace:
+0   chromedriver                        0x000000010306ce6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x0000000103064d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x0000000102bb63ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x0000000102b90144 chromedriver + 131396
+4   chromedriver                        0x0000000102c2560c cxxbridge1$string$len + 545848
+5   chromedriver                        0x0000000102c3e454 cxxbridge1$string$len + 647808
+6   chromedriver                        0x0000000102bf1834 cxxbridge1$string$len + 333408
+7   chromedriver                        0x000000010302ff88 cxxbridge1$str$ptr + 2473268
+8   chromedriver                        0x00000001030331f4 cxxbridge1$str$ptr + 2486176
+9   chromedriver                        0x00000001030119d0 cxxbridge1$str$ptr + 2348924
+10  chromedriver                        0x0000000103033ab0 cxxbridge1$str$ptr + 2488412
+11  chromedriver                        0x0000000103002a60 cxxbridge1$str$ptr + 2287628
+12  chromedriver                        0x00000001030539a0 cxxbridge1$str$ptr + 2619212
+13  chromedriver                        0x0000000103053b2c cxxbridge1$str$ptr + 2619608
+14  chromedriver                        0x00000001030649b0 cxxbridge1$str$ptr + 2688860
+15  libsystem_pthread.dylib             0x000000018346ec0c _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000183469b80 thread_start + 8
+
+2025-07-10 21:48:04,020 - INFO - ✅ Browser closed successfully
+2025-07-10 21:51:25,405 - INFO - 🚀 Starting full automation workflow...
+2025-07-10 21:51:25,406 - INFO - Setting up Chrome driver...
+2025-07-10 21:51:25,406 - INFO - ====== WebDriver manager ======
+2025-07-10 21:51:25,557 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 21:51:25,627 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 21:51:25,688 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.94/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-10 21:51:25,900 - ERROR - ❌ Failed to setup Chrome driver: Message: invalid argument: cannot parse capability: goog:chromeOptions
+from invalid argument: unrecognized chrome option: credentials_enable_service
+Stacktrace:
+0   chromedriver                        0x00000001033d0e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x00000001033c8d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x0000000102f1a3ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x0000000102f422f4 cxxbridge1$string$len + 254240
+4   chromedriver                        0x0000000102f3f0fc cxxbridge1$string$len + 241448
+5   chromedriver                        0x0000000102f8d3ac cxxbridge1$string$len + 561624
+6   chromedriver                        0x0000000102f8ce74 cxxbridge1$string$len + 560288
+7   chromedriver                        0x0000000102f8e5f8 cxxbridge1$string$len + 566308
+8   chromedriver                        0x0000000102f8e40c cxxbridge1$string$len + 565816
+9   chromedriver                        0x0000000102f55834 cxxbridge1$string$len + 333408
+10  chromedriver                        0x0000000103393f88 cxxbridge1$str$ptr + 2473268
+11  chromedriver                        0x00000001033971f4 cxxbridge1$str$ptr + 2486176
+12  chromedriver                        0x00000001033759d0 cxxbridge1$str$ptr + 2348924
+13  chromedriver                        0x0000000103397ab0 cxxbridge1$str$ptr + 2488412
+14  chromedriver                        0x0000000103366a60 cxxbridge1$str$ptr + 2287628
+15  chromedriver                        0x00000001033b79a0 cxxbridge1$str$ptr + 2619212
+16  chromedriver                        0x00000001033b7b2c cxxbridge1$str$ptr + 2619608
+17  chromedriver                        0x00000001033c89b0 cxxbridge1$str$ptr + 2688860
+18  libsystem_pthread.dylib             0x000000018346ec0c _pthread_start + 136
+19  libsystem_pthread.dylib             0x0000000183469b80 thread_start + 8
+
+2025-07-10 21:51:25,900 - ERROR - ❌ Full automation failed: Message: invalid argument: cannot parse capability: goog:chromeOptions
+from invalid argument: unrecognized chrome option: credentials_enable_service
+Stacktrace:
+0   chromedriver                        0x00000001033d0e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x00000001033c8d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x0000000102f1a3ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x0000000102f422f4 cxxbridge1$string$len + 254240
+4   chromedriver                        0x0000000102f3f0fc cxxbridge1$string$len + 241448
+5   chromedriver                        0x0000000102f8d3ac cxxbridge1$string$len + 561624
+6   chromedriver                        0x0000000102f8ce74 cxxbridge1$string$len + 560288
+7   chromedriver                        0x0000000102f8e5f8 cxxbridge1$string$len + 566308
+8   chromedriver                        0x0000000102f8e40c cxxbridge1$string$len + 565816
+9   chromedriver                        0x0000000102f55834 cxxbridge1$string$len + 333408
+10  chromedriver                        0x0000000103393f88 cxxbridge1$str$ptr + 2473268
+11  chromedriver                        0x00000001033971f4 cxxbridge1$str$ptr + 2486176
+12  chromedriver                        0x00000001033759d0 cxxbridge1$str$ptr + 2348924
+13  chromedriver                        0x0000000103397ab0 cxxbridge1$str$ptr + 2488412
+14  chromedriver                        0x0000000103366a60 cxxbridge1$str$ptr + 2287628
+15  chromedriver                        0x00000001033b79a0 cxxbridge1$str$ptr + 2619212
+16  chromedriver                        0x00000001033b7b2c cxxbridge1$str$ptr + 2619608
+17  chromedriver                        0x00000001033c89b0 cxxbridge1$str$ptr + 2688860
+18  libsystem_pthread.dylib             0x000000018346ec0c _pthread_start + 136
+19  libsystem_pthread.dylib             0x0000000183469b80 thread_start + 8
+
+2025-07-10 21:51:25,900 - ERROR - ❌ Failed to take screenshot: 'NoneType' object has no attribute 'save_screenshot'
+2025-07-10 21:53:41,594 - INFO - 🚀 Starting full automation workflow...
+2025-07-10 21:53:41,594 - INFO - Setting up Chrome driver...
+2025-07-10 21:53:41,595 - INFO - ====== WebDriver manager ======
+2025-07-10 21:53:41,697 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 21:53:41,766 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 21:53:41,840 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.94/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-10 21:53:42,876 - INFO - ✅ Chrome driver setup successful
+2025-07-10 21:53:42,877 - INFO - 🔑 Starting login process...
+2025-07-10 21:53:42,878 - INFO - 🌐 Navigating to CURA Healthcare website...
+2025-07-10 21:53:45,510 - INFO - ✅ Successfully navigated to website
+2025-07-10 21:53:45,890 - INFO - ✅ Clicked Make Appointment button
+2025-07-10 21:53:46,033 - INFO - ✅ Entered text in username field
+2025-07-10 21:53:46,078 - INFO - ✅ Entered text in password field
+2025-07-10 21:53:46,639 - INFO - ✅ Clicked login button
+2025-07-10 21:53:46,645 - INFO - ✅ Login successful!
+2025-07-10 21:53:46,646 - INFO - 📅 Starting appointment booking...
+2025-07-10 21:53:46,717 - INFO - ✅ Selected facility: Seoul CURA Healthcare Center
+2025-07-10 21:53:46,757 - INFO - ✅ Enabled hospital readmission
+2025-07-10 21:53:46,799 - INFO - ✅ Clicked healthcare program: Medicaid
+2025-07-10 21:53:47,455 - INFO - ✅ Set visit date: 25/07/2025
+2025-07-10 21:53:47,496 - INFO - ✅ Entered text in comment field
+2025-07-10 21:53:47,537 - INFO - ✅ Clicked Book Appointment button
+2025-07-10 21:54:08,111 - ERROR - Element not found: ('xpath', "//h2[contains(text(), 'Appointment Confirmation')]")
+2025-07-10 21:54:08,113 - ERROR - ❌ Appointment booking failed: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100c60e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x0000000100c58d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x00000001007aa3ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x00000001007f1544 cxxbridge1$string$len + 381808
+4   chromedriver                        0x0000000100832934 cxxbridge1$string$len + 649056
+5   chromedriver                        0x00000001007e5834 cxxbridge1$string$len + 333408
+6   chromedriver                        0x0000000100c23f88 cxxbridge1$str$ptr + 2473268
+7   chromedriver                        0x0000000100c271f4 cxxbridge1$str$ptr + 2486176
+8   chromedriver                        0x0000000100c059d0 cxxbridge1$str$ptr + 2348924
+9   chromedriver                        0x0000000100c27ab0 cxxbridge1$str$ptr + 2488412
+10  chromedriver                        0x0000000100bf6a60 cxxbridge1$str$ptr + 2287628
+11  chromedriver                        0x0000000100c479a0 cxxbridge1$str$ptr + 2619212
+12  chromedriver                        0x0000000100c47b2c cxxbridge1$str$ptr + 2619608
+13  chromedriver                        0x0000000100c589b0 cxxbridge1$str$ptr + 2688860
+14  libsystem_pthread.dylib             0x000000018346ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000183469b80 thread_start + 8
+
+2025-07-10 21:54:08,564 - INFO - 📸 Screenshot saved: appointment_error.png
+2025-07-10 21:54:08,720 - INFO - ✅ Browser closed successfully
+2025-07-10 21:55:41,857 - INFO - 🚀 Starting full automation workflow...
+2025-07-10 21:55:41,858 - INFO - Setting up Chrome driver...
+2025-07-10 21:55:43,700 - INFO - ====== WebDriver manager ======
+2025-07-10 21:55:43,932 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 21:55:44,026 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-10 21:55:44,163 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.94/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-10 21:55:45,573 - INFO - ✅ Chrome driver setup successful
+2025-07-10 21:55:45,575 - INFO - 🔑 Starting login process...
+2025-07-10 21:55:45,575 - INFO - 🌐 Navigating to CURA Healthcare website...
+2025-07-10 21:55:48,108 - INFO - ✅ Successfully navigated to website
+2025-07-10 21:55:48,831 - INFO - ✅ Clicked Make Appointment button
+2025-07-10 21:55:48,935 - INFO - ✅ Entered text in username field
+2025-07-10 21:55:48,974 - INFO - ✅ Entered text in password field
+2025-07-10 21:55:49,010 - INFO - ✅ Clicked login button
+2025-07-10 21:55:49,619 - INFO - ✅ Login successful!
+2025-07-10 21:55:49,619 - INFO - 📅 Starting appointment booking...
+2025-07-10 21:55:49,667 - INFO - ✅ Selected facility: Seoul CURA Healthcare Center
+2025-07-10 21:55:49,697 - INFO - ✅ Enabled hospital readmission
+2025-07-10 21:55:49,730 - INFO - ✅ Clicked healthcare program: Medicaid
+2025-07-10 21:55:50,365 - INFO - ✅ Set visit date: 25/07/2025
+2025-07-10 21:55:50,411 - INFO - ✅ Entered text in comment field
+2025-07-10 21:55:50,447 - INFO - ✅ Clicked Book Appointment button
+2025-07-10 21:56:11,051 - ERROR - Element not found: ('xpath', "//h2[contains(text(), 'Appointment Confirmation')]")
+2025-07-10 21:56:11,052 - ERROR - ❌ Appointment booking failed: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000101180e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x0000000101178d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x0000000100cca3ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x0000000100d11544 cxxbridge1$string$len + 381808
+4   chromedriver                        0x0000000100d52934 cxxbridge1$string$len + 649056
+5   chromedriver                        0x0000000100d05834 cxxbridge1$string$len + 333408
+6   chromedriver                        0x0000000101143f88 cxxbridge1$str$ptr + 2473268
+7   chromedriver                        0x00000001011471f4 cxxbridge1$str$ptr + 2486176
+8   chromedriver                        0x00000001011259d0 cxxbridge1$str$ptr + 2348924
+9   chromedriver                        0x0000000101147ab0 cxxbridge1$str$ptr + 2488412
+10  chromedriver                        0x0000000101116a60 cxxbridge1$str$ptr + 2287628
+11  chromedriver                        0x00000001011679a0 cxxbridge1$str$ptr + 2619212
+12  chromedriver                        0x0000000101167b2c cxxbridge1$str$ptr + 2619608
+13  chromedriver                        0x00000001011789b0 cxxbridge1$str$ptr + 2688860
+14  libsystem_pthread.dylib             0x000000018346ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000183469b80 thread_start + 8
+
+2025-07-10 21:56:11,342 - INFO - 📸 Screenshot saved: appointment_error.png
+2025-07-10 21:56:11,485 - INFO - ✅ Browser closed successfully
