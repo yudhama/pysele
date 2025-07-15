@@ -1,0 +1,3 @@
+username,password,filepath
+John Doe,ThisIsNotAPassword,/Users/yudhamaulanaahmad/project/python-selenium/cobaTest/files/sample.txt
+Jane Doe,AnotherPassword,/Users/yudhamaulanaahmad/project/python-selenium/cobaTest/files/sample.txt
