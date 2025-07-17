@@ -14,6 +14,7 @@ def test_upload_sample_txt():
 
     try:
         file_input = driver.find_element(By.XPATH, '//input[@type="file"]')
+        # time.sleep(10)  # Wait for the file input to be ready
         file_input.send_keys(os.path.abspath(file_path))
         print(f"Uploaded file: {file_path}")
         time.sleep(3)  # Wait for upload to complete
