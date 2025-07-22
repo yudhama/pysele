@@ -1,0 +1,186 @@
+2025-07-22 17:40:16,191 - INFO - Starting security test suite...
+2025-07-22 17:40:16,191 - INFO - Running XSS Vulnerability Test...
+2025-07-22 17:40:16,191 - INFO - ====== WebDriver manager ======
+2025-07-22 17:40:16,306 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:16,399 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:16,461 - INFO - There is no [mac64] chromedriver "138.0.7204.157" for browser google-chrome "138.0.7204" in cache
+2025-07-22 17:40:16,469 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:16,648 - INFO - WebDriver version 138.0.7204.157 selected
+2025-07-22 17:40:16,651 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.157/mac-arm64/chromedriver-mac-arm64.zip
+2025-07-22 17:40:16,651 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.157/mac-arm64/chromedriver-mac-arm64.zip
+2025-07-22 17:40:16,747 - INFO - Driver downloading response is 200
+2025-07-22 17:40:17,550 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:17,666 - INFO - Driver has been saved in cache [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.157]
+2025-07-22 17:40:24,198 - ERROR - Test failed: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="txt-username"]"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000100d2355c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000100d1b454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010086a3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x00000001008b171c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001008f2b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x00000001008a5a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x0000000100ce65e0 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x0000000100ce9848 cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x0000000100cc7234 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x0000000100cea104 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x0000000100cb82e4 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x0000000100d09ff8 cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x0000000100d0a184 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x0000000100d1b090 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x0000000193762c0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019375db80 thread_start + 8
+
+2025-07-22 17:40:24,285 - INFO - Completed XSS Vulnerability Test
+2025-07-22 17:40:24,285 - INFO - Running SQL Injection Test...
+2025-07-22 17:40:24,285 - INFO - ====== WebDriver manager ======
+2025-07-22 17:40:24,433 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:24,495 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:24,556 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.157/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-22 17:40:29,334 - INFO - SQL Injection attempt failed with payload: ' OR '1'='1
+2025-07-22 17:40:30,051 - INFO - SQL Injection attempt failed with payload: ' OR '1'='1' --
+2025-07-22 17:40:30,712 - INFO - SQL Injection attempt failed with payload: admin' --
+2025-07-22 17:40:31,417 - INFO - SQL Injection attempt failed with payload: ' UNION SELECT 1, username, password FROM users --
+2025-07-22 17:40:32,097 - INFO - SQL Injection attempt failed with payload: '; DROP TABLE users; --
+2025-07-22 17:40:32,169 - INFO - Completed SQL Injection Test
+2025-07-22 17:40:32,169 - INFO - Running Authentication Security Test...
+2025-07-22 17:40:32,170 - INFO - ====== WebDriver manager ======
+2025-07-22 17:40:32,313 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:32,379 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:32,444 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.157/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-22 17:40:37,039 - INFO - Testing brute force protection...
+2025-07-22 17:40:37,802 - INFO - Attempt 1 error message: Login failed! Please ensure the username and password are valid.
+2025-07-22 17:40:38,441 - INFO - Attempt 2 error message: Login failed! Please ensure the username and password are valid.
+2025-07-22 17:40:39,130 - INFO - Attempt 3 error message: Login failed! Please ensure the username and password are valid.
+2025-07-22 17:40:39,805 - INFO - Attempt 4 error message: Login failed! Please ensure the username and password are valid.
+2025-07-22 17:40:40,488 - ERROR - Test failed: Message: stale element reference: stale element not found
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x000000010083f55c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000100837454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x00000001003863f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x0000000100396e30 cxxbridge1$string$len + 158816
+4   chromedriver                        0x0000000100395f0c cxxbridge1$string$len + 154940
+5   chromedriver                        0x000000010038c9c0 cxxbridge1$string$len + 116720
+6   chromedriver                        0x000000010038b168 cxxbridge1$string$len + 110488
+7   chromedriver                        0x000000010038e3f4 cxxbridge1$string$len + 123428
+8   chromedriver                        0x000000010038e49c cxxbridge1$string$len + 123596
+9   chromedriver                        0x00000001003c86ac cxxbridge1$string$len + 361692
+10  chromedriver                        0x00000001003c2fbc cxxbridge1$string$len + 339436
+11  chromedriver                        0x000000010040eb1c cxxbridge1$string$len + 649548
+12  chromedriver                        0x00000001003c1a0c cxxbridge1$string$len + 333884
+13  chromedriver                        0x00000001008025e0 cxxbridge1$str$ptr + 2481340
+14  chromedriver                        0x0000000100805848 cxxbridge1$str$ptr + 2494244
+15  chromedriver                        0x00000001007e3234 cxxbridge1$str$ptr + 2353424
+16  chromedriver                        0x0000000100806104 cxxbridge1$str$ptr + 2496480
+17  chromedriver                        0x00000001007d42e4 cxxbridge1$str$ptr + 2292160
+18  chromedriver                        0x0000000100825ff8 cxxbridge1$str$ptr + 2627284
+19  chromedriver                        0x0000000100826184 cxxbridge1$str$ptr + 2627680
+20  chromedriver                        0x0000000100837090 cxxbridge1$str$ptr + 2697068
+21  libsystem_pthread.dylib             0x0000000193762c0c _pthread_start + 136
+22  libsystem_pthread.dylib             0x000000019375db80 thread_start + 8
+
+2025-07-22 17:40:40,561 - INFO - Completed Authentication Security Test
+2025-07-22 17:40:40,561 - INFO - Running CSRF Vulnerability Test...
+2025-07-22 17:40:40,562 - INFO - ====== WebDriver manager ======
+2025-07-22 17:40:40,710 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:40,769 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 17:40:40,829 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.157/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-22 17:40:51,973 - INFO - CSRF protection appears to be in place
+2025-07-22 17:40:52,075 - INFO - Completed CSRF Vulnerability Test
+2025-07-22 17:40:52,075 - INFO - 
+Security Test Suite Summary:
+2025-07-22 17:40:52,075 - INFO - XSS Vulnerability Test: Passed
+2025-07-22 17:40:52,075 - INFO - SQL Injection Test: Passed
+2025-07-22 17:40:52,075 - INFO - Authentication Security Test: Passed
+2025-07-22 17:40:52,075 - INFO - CSRF Vulnerability Test: Passed
+2025-07-22 17:40:52,075 - INFO - 
+Total execution time: 35.88 seconds
+2025-07-22 20:35:37,687 - INFO - Starting security test suite...
+2025-07-22 20:35:37,687 - INFO - Running XSS Vulnerability Test...
+2025-07-22 20:35:37,687 - INFO - ====== WebDriver manager ======
+2025-07-22 20:35:37,839 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 20:35:37,983 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 20:35:38,060 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.157/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-22 20:35:43,974 - ERROR - Test failed: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="txt-username"]"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000102bd755c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000102bcf454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010271e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010276571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001027a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000102759a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x0000000102b9a5e0 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x0000000102b9d848 cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x0000000102b7b234 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x0000000102b9e104 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x0000000102b6c2e4 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x0000000102bbdff8 cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x0000000102bbe184 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x0000000102bcf090 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x0000000193762c0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019375db80 thread_start + 8
+
+2025-07-22 20:35:44,051 - INFO - Completed XSS Vulnerability Test
+2025-07-22 20:35:44,051 - INFO - Running SQL Injection Test...
+2025-07-22 20:35:44,051 - INFO - ====== WebDriver manager ======
+2025-07-22 20:35:44,201 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 20:35:44,266 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 20:35:44,350 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.157/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-22 20:35:50,183 - INFO - SQL Injection attempt failed with payload: ' OR '1'='1
+2025-07-22 20:35:50,865 - INFO - SQL Injection attempt failed with payload: ' OR '1'='1' --
+2025-07-22 20:35:51,521 - INFO - SQL Injection attempt failed with payload: admin' --
+2025-07-22 20:35:51,661 - INFO - SQL Injection attempt failed with payload: ' UNION SELECT 1, username, password FROM users --
+2025-07-22 20:35:52,899 - INFO - SQL Injection attempt failed with payload: '; DROP TABLE users; --
+2025-07-22 20:35:52,967 - INFO - Completed SQL Injection Test
+2025-07-22 20:35:52,967 - INFO - Running Authentication Security Test...
+2025-07-22 20:35:52,967 - INFO - ====== WebDriver manager ======
+2025-07-22 20:35:53,119 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 20:35:53,203 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 20:35:53,275 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.157/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-22 20:35:58,057 - INFO - Testing brute force protection...
+2025-07-22 20:35:58,894 - INFO - Attempt 1 error message: Login failed! Please ensure the username and password are valid.
+2025-07-22 20:35:59,583 - ERROR - Test failed: Message: stale element reference: stale element not found
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x00000001049e755c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001049df454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010452e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010453ee30 cxxbridge1$string$len + 158816
+4   chromedriver                        0x000000010453df0c cxxbridge1$string$len + 154940
+5   chromedriver                        0x00000001045349c0 cxxbridge1$string$len + 116720
+6   chromedriver                        0x0000000104533168 cxxbridge1$string$len + 110488
+7   chromedriver                        0x00000001045363f4 cxxbridge1$string$len + 123428
+8   chromedriver                        0x000000010453649c cxxbridge1$string$len + 123596
+9   chromedriver                        0x00000001045706ac cxxbridge1$string$len + 361692
+10  chromedriver                        0x000000010456afbc cxxbridge1$string$len + 339436
+11  chromedriver                        0x00000001045b6b1c cxxbridge1$string$len + 649548
+12  chromedriver                        0x0000000104569a0c cxxbridge1$string$len + 333884
+13  chromedriver                        0x00000001049aa5e0 cxxbridge1$str$ptr + 2481340
+14  chromedriver                        0x00000001049ad848 cxxbridge1$str$ptr + 2494244
+15  chromedriver                        0x000000010498b234 cxxbridge1$str$ptr + 2353424
+16  chromedriver                        0x00000001049ae104 cxxbridge1$str$ptr + 2496480
+17  chromedriver                        0x000000010497c2e4 cxxbridge1$str$ptr + 2292160
+18  chromedriver                        0x00000001049cdff8 cxxbridge1$str$ptr + 2627284
+19  chromedriver                        0x00000001049ce184 cxxbridge1$str$ptr + 2627680
+20  chromedriver                        0x00000001049df090 cxxbridge1$str$ptr + 2697068
+21  libsystem_pthread.dylib             0x0000000193762c0c _pthread_start + 136
+22  libsystem_pthread.dylib             0x000000019375db80 thread_start + 8
+
+2025-07-22 20:35:59,653 - INFO - Completed Authentication Security Test
+2025-07-22 20:35:59,653 - INFO - Running CSRF Vulnerability Test...
+2025-07-22 20:35:59,654 - INFO - ====== WebDriver manager ======
+2025-07-22 20:35:59,807 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 20:35:59,940 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-22 20:36:00,112 - INFO - Driver [/Users/yudhamaulanaahmad/.wdm/drivers/chromedriver/mac64/138.0.7204.157/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-22 20:36:09,568 - INFO - CSRF protection appears to be in place
+2025-07-22 20:36:09,645 - INFO - Completed CSRF Vulnerability Test
+2025-07-22 20:36:09,645 - INFO - 
+Security Test Suite Summary:
+2025-07-22 20:36:09,646 - INFO - XSS Vulnerability Test: Passed
+2025-07-22 20:36:09,646 - INFO - SQL Injection Test: Passed
+2025-07-22 20:36:09,646 - INFO - Authentication Security Test: Passed
+2025-07-22 20:36:09,646 - INFO - CSRF Vulnerability Test: Passed
+2025-07-22 20:36:09,646 - INFO - 
+Total execution time: 31.96 seconds
