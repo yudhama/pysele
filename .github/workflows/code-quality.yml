@@ -1,0 +1,46 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 black isort mypy pylint
+    
+    - name: Run Black (code formatting)
+      run: |
+        black --check --diff cobaTest/
+    
+    - name: Run isort (import sorting)
+      run: |
+        isort --check-only --diff cobaTest/
+    
+    - name: Run flake8 (linting)
+      run: |
+        flake8 cobaTest/ --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 cobaTest/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Run pylint
+      run: |
+        pylint cobaTest/ --exit-zero
+    
+    - name: Run mypy (type checking)
+      run: |
+        mypy cobaTest/ --ignore-missing-imports
+      continue-on-error: true
