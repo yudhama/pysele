@@ -10,7 +10,7 @@ def test_upload_sample_txt():
         return
 
     driver = get_driver(headless=False)
-    driver.get("https://filebin.net/")
+    driver.get("https://filebin.net/") # type: ignore
 
     try:
         file_input = driver.find_element(By.XPATH, '//input[@type="file"]')
