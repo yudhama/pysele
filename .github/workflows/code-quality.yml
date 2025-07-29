@@ -13,34 +13,40 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Set up Python 3.10
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.11'
     
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 black isort mypy pylint
+        pip install flake8 black isort mypy
+        pip install -r requirements.txt
     
-    - name: Run Black (code formatting)
+    - name: Run Black formatter check
       run: |
         black --check --diff cobaTest/
     
-    - name: Run isort (import sorting)
+    - name: Run isort import sorting check
       run: |
         isort --check-only --diff cobaTest/
     
-    - name: Run flake8 (linting)
+    - name: Run Flake8 linting
       run: |
         flake8 cobaTest/ --count --select=E9,F63,F7,F82 --show-source --statistics
         flake8 cobaTest/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     
-    - name: Run pylint
-      run: |
-        pylint cobaTest/ --exit-zero
-    
-    - name: Run mypy (type checking)
+    - name: Run MyPy type checking
       run: |
         mypy cobaTest/ --ignore-missing-imports
       continue-on-error: true
+    
+    - name: Upload code quality reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: code-quality-reports
+        path: |
+          .mypy_cache/
+        retention-days: 30
