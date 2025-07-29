@@ -1,0 +1,18 @@
+# Existing packages
+selenium
+webdriver-manager
+requests
+logging
+
+# Testing packages
+pytest
+pytest-html
+pytest-cov
+pillow
+
+# Security testing
+bandit
+
+# Code quality
+flake8
+black

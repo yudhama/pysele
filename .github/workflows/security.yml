@@ -1,13 +1,12 @@
-name: Security Testing
+name: Security Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
   pull_request:
     branches: [ main ]
   schedule:
-    # Run security tests weekly on Sundays at 3 AM UTC
-    - cron: '0 3 * * 0'
+    - cron: '0 2 * * 1'  # Run weekly on Mondays at 2 AM
 
 jobs:
   security-tests:
@@ -16,75 +15,39 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Set up Python 3.10
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.11'
     
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wget unzip xvfb
-    
-    - name: Install Chrome
-      run: |
-        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-    
-    - name: Install Python dependencies
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install selenium webdriver-manager requests python-dotenv
+        pip install -r requirements.txt
+        pip install bandit safety
     
-    - name: Create environment file
+    - name: Run Bandit security scan
       run: |
-        cp cobaTest/sample.env .env
-    
-    - name: Run XSS vulnerability tests
-      run: |
-        export DISPLAY=:99
-        Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-        python -m cobaTest.tests.security.test_xss_vulnerability
-      continue-on-error: true
-    
-    - name: Run SQL injection tests
-      run: |
-        export DISPLAY=:99
-        python -m cobaTest.tests.security.test_sql_injection
-      continue-on-error: true
-    
-    - name: Run authentication security tests
-      run: |
-        export DISPLAY=:99
-        python -m cobaTest.tests.security.test_authentication_security
-      continue-on-error: true
-    
-    - name: Run CSRF vulnerability tests
-      run: |
-        export DISPLAY=:99
-        python -m cobaTest.tests.security.test_csrf_vulnerability
-      continue-on-error: true
-    
-    - name: Upload security test logs
-      uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: security-test-logs
-        path: |
-          security_test*.log
-          *.png
-    
-    - name: Security scan with Bandit
-      run: |
-        pip install bandit
         bandit -r cobaTest/ -f json -o bandit-report.json
       continue-on-error: true
     
-    - name: Upload security scan results
-      uses: actions/upload-artifact@v3
+    - name: Run Safety check
+      run: |
+        safety check --json --output safety-report.json
+      continue-on-error: true
+    
+    - name: Run custom security tests
+      run: |
+        pytest cobaTest/tests/security/ -v --junitxml=security-test-results.xml
+      continue-on-error: true
+    
+    - name: Upload security reports
+      uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: security-scan-results
-        path: bandit-report.json
+        name: security-reports
+        path: |
+          bandit-report.json
+          safety-report.json
+          security-test-results.xml
+        retention-days: 90

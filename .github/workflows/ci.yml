@@ -5,9 +5,6 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
-  schedule:
-    # Run tests daily at 2 AM UTC
-    - cron: '0 2 * * *'
 
 jobs:
   test:
@@ -15,7 +12,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.8, 3.9, '3.10', '3.11']
-    
+
     steps:
     - uses: actions/checkout@v4
     
@@ -32,56 +29,43 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pip-
     
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wget unzip xvfb
-    
-    - name: Install Chrome
-      run: |
-        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-    
-    - name: Install Python dependencies
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install selenium webdriver-manager pytest pytest-html pytest-cov
-        pip install requests python-dotenv
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -r requirements.txt
     
-    - name: Create environment file
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@latest
+    
+    - name: Install ChromeDriver
+      uses: nanasess/setup-chromedriver@master
+    
+    - name: Run API tests
       run: |
-        cp cobaTest/sample.env .env
+        pytest cobaTest/tests/api/ -v --junitxml=api-test-results.xml
     
-    - name: Run functional tests
+    - name: Run Selenium tests
       run: |
-        export DISPLAY=:99
-        Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-        python -m pytest cobaTest/tests/ -v --html=reports/functional-report.html --self-contained-html
-      continue-on-error: true
+        pytest cobaTest/tests/test_make_appointment.py -v --junitxml=selenium-test-results.xml
+      env:
+        DISPLAY: :99
     
-    - name: Run security tests
-      run: |
-        export DISPLAY=:99
-        python -m cobaTest.tests.security.run_security_tests
-      continue-on-error: true
-    
-    - name: Upload test reports
-      uses: actions/upload-artifact@v3
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: test-reports-${{ matrix.python-version }}
+        name: test-results-${{ matrix.python-version }}
         path: |
-          reports/
-          *.log
-          *.png
+          *-test-results.xml
+          htmlcov/
+        retention-days: 30
     
     - name: Upload coverage reports
       uses: codecov/codecov-action@v5
       if: matrix.python-version == '3.10'
+      uses: actions/upload-artifact@v4
+      if: always()
       with:
-        file: ./coverage.xml
-        flags: unittests
-        name: codecov-umbrella
+        name: coverage-report-${{ matrix.python-version }}
+        path: htmlcov/
+        retention-days: 30
