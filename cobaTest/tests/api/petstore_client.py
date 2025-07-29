@@ -5,7 +5,7 @@ from typing import Optional, Dict, Any
 class PetstoreAPIClient:
     """Client for interacting with Swagger Petstore API"""
     
-    def __init__(self, base_url: str = "https://petstore.swagger.io/v2"):
+    def __init__(self, base_url: str = "https://petstore.swagger.io/v2"): # type: ignore
         self.base_url = base_url
         self.session = requests.Session()
         self.session.headers.update({
