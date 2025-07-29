@@ -8,7 +8,7 @@ import tempfile
 
 class TestPetstoreFileUpload:
     """
-    Test suite for Swagger Petstore file upload API endpoint
+    Test suite for Swagger Petstore File Upload API endpoint
     Endpoint: POST /pet/{petId}/uploadImage
     """
     
@@ -41,118 +41,89 @@ class TestPetstoreFileUpload:
             "photoUrls": []
         }
         
-        response = requests.post(
-            f"{self.BASE_URL}/pet",
-            json=pet_data,
-            headers={"Content-Type": "application/json"}
-        )
+        # Create pet first
+        create_url = f"{self.BASE_URL}/pet"
+        response = requests.post(create_url, json=pet_data)
         
-        if response.status_code in [200, 201]:
+        if response.status_code == 200:
             return pet_data["id"]
         else:
-            # If creation fails, use a default pet ID
-            return 12345
+            # If creation fails, just return the ID anyway for testing
+            return pet_data["id"]
     
-    def test_upload_image_file_success(self, sample_image_file, create_test_pet):
-        """Test successful image file upload"""
+    def test_upload_image_success(self, sample_image_file, create_test_pet):
+        """Test successful image upload"""
         pet_id = create_test_pet
         url = f"{self.BASE_URL}{self.UPLOAD_ENDPOINT.format(pet_id=pet_id)}"
         
-        files = {
-            'file': ('test_image.jpg', sample_image_file, 'image/jpeg')
-        }
-        data = {
-            'additionalMetadata': 'Test image upload via API automation'
-        }
+        files = {'file': ('test_image.jpg', sample_image_file, 'image/jpeg')}
+        data = {'additionalMetadata': 'Test image upload'}
         
         response = requests.post(url, files=files, data=data)
         
-        # Assertions
-        assert response.status_code == 200, f"Expected 200, got {response.status_code}"
+        assert response.status_code == 200
         
-        # Verify response contains expected fields
         response_data = response.json()
         assert 'code' in response_data
         assert 'type' in response_data
         assert 'message' in response_data
-        
-        print(f"Upload successful: {response_data}")
     
-    def test_upload_with_additional_metadata(self, sample_image_file, create_test_pet):
-        """Test file upload with additional metadata"""
+    def test_upload_with_metadata(self, sample_image_file, create_test_pet):
+        """Test upload with additional metadata"""
         pet_id = create_test_pet
         url = f"{self.BASE_URL}{self.UPLOAD_ENDPOINT.format(pet_id=pet_id)}"
         
-        metadata = "Custom metadata for testing - uploaded via automation"
-        
-        files = {
-            'file': ('test_image_with_metadata.jpg', sample_image_file, 'image/jpeg')
-        }
-        data = {
-            'additionalMetadata': metadata
-        }
+        metadata = "Profile picture for test pet"
+        files = {'file': ('profile.jpg', sample_image_file, 'image/jpeg')}
+        data = {'additionalMetadata': metadata}
         
         response = requests.post(url, files=files, data=data)
         
         assert response.status_code == 200
         response_data = response.json()
-        
-        # Verify metadata is reflected in response
         assert metadata in response_data.get('message', '')
     
     def test_upload_without_file(self, create_test_pet):
-        """Test upload request without file (should handle gracefully)"""
+        """Test upload request without file"""
         pet_id = create_test_pet
         url = f"{self.BASE_URL}{self.UPLOAD_ENDPOINT.format(pet_id=pet_id)}"
         
-        data = {
-            'additionalMetadata': 'Upload without file test'
-        }
+        data = {'additionalMetadata': 'No file upload test'}
         
         response = requests.post(url, data=data)
         
-        # API should handle missing file gracefully
-        assert response.status_code in [200, 400, 415], f"Unexpected status: {response.status_code}"
+        # Should handle missing file gracefully
+        assert response.status_code in [200, 400]
     
     def test_upload_invalid_pet_id(self, sample_image_file):
-        """Test file upload with invalid pet ID"""
+        """Test upload with invalid pet ID"""
         invalid_pet_id = 999999999
         url = f"{self.BASE_URL}{self.UPLOAD_ENDPOINT.format(pet_id=invalid_pet_id)}"
         
-        files = {
-            'file': ('test_image.jpg', sample_image_file, 'image/jpeg')
-        }
-        data = {
-            'additionalMetadata': 'Test with invalid pet ID'
-        }
+        files = {'file': ('test.jpg', sample_image_file, 'image/jpeg')}
         
-        response = requests.post(url, files=files, data=data)
+        response = requests.post(url, files=files)
         
-        # Should still return 200 as per Swagger Petstore behavior
-        assert response.status_code == 200
+        # Should return error for invalid pet ID
+        assert response.status_code in [404, 400]
     
     def test_upload_large_file(self, create_test_pet):
-        """Test upload with larger file size"""
+        """Test upload with larger file"""
         pet_id = create_test_pet
         url = f"{self.BASE_URL}{self.UPLOAD_ENDPOINT.format(pet_id=pet_id)}"
         
         # Create a larger test image
         img = Image.new('RGB', (1000, 1000), color='blue')
         img_bytes = BytesIO()
-        img.save(img_bytes, format='JPEG', quality=95)
+        img.save(img_bytes, format='JPEG')
         img_bytes.seek(0)
         
-        files = {
-            'file': ('large_test_image.jpg', img_bytes, 'image/jpeg')
-        }
-        data = {
-            'additionalMetadata': 'Large file upload test'
-        }
+        files = {'file': ('large_image.jpg', img_bytes, 'image/jpeg')}
+        data = {'additionalMetadata': 'Large file upload test'}
         
         response = requests.post(url, files=files, data=data)
         
         assert response.status_code == 200
-        print(f"Large file upload response: {response.json()}")
     
     def test_upload_different_file_types(self, sample_text_file, create_test_pet):
         """Test upload with different file types"""
@@ -160,16 +131,12 @@ class TestPetstoreFileUpload:
         url = f"{self.BASE_URL}{self.UPLOAD_ENDPOINT.format(pet_id=pet_id)}"
         
         # Test with text file
-        files = {
-            'file': ('test_document.txt', sample_text_file, 'text/plain')
-        }
-        data = {
-            'additionalMetadata': 'Text file upload test'
-        }
+        files = {'file': ('test.txt', sample_text_file, 'text/plain')}
+        data = {'additionalMetadata': 'Text file upload test'}
         
         response = requests.post(url, files=files, data=data)
         
-        # API should accept any file type
+        # Should accept different file types
         assert response.status_code == 200
     
     def test_upload_response_structure(self, sample_image_file, create_test_pet):
@@ -177,25 +144,22 @@ class TestPetstoreFileUpload:
         pet_id = create_test_pet
         url = f"{self.BASE_URL}{self.UPLOAD_ENDPOINT.format(pet_id=pet_id)}"
         
-        files = {
-            'file': ('structure_test.jpg', sample_image_file, 'image/jpeg')
-        }
-        data = {
-            'additionalMetadata': 'Response structure validation test'
-        }
+        files = {'file': ('structure_test.jpg', sample_image_file, 'image/jpeg')}
         
-        response = requests.post(url, files=files, data=data)
+        response = requests.post(url, files=files)
         
         assert response.status_code == 200
+        assert response.headers.get('content-type') == 'application/json'
         
-        # Validate response structure
         response_data = response.json()
-        required_fields = ['code', 'type', 'message']
         
-        for field in required_fields:
-            assert field in response_data, f"Missing required field: {field}"
+        # Verify response structure
+        assert isinstance(response_data, dict)
+        assert 'code' in response_data
+        assert 'type' in response_data
+        assert 'message' in response_data
         
-        # Validate data types
+        # Verify data types
         assert isinstance(response_data['code'], int)
         assert isinstance(response_data['type'], str)
         assert isinstance(response_data['message'], str)
@@ -207,21 +171,16 @@ class TestPetstoreFileUpload:
         pet_id = create_test_pet
         url = f"{self.BASE_URL}{self.UPLOAD_ENDPOINT.format(pet_id=pet_id)}"
         
-        files = {
-            'file': ('performance_test.jpg', sample_image_file, 'image/jpeg')
-        }
-        data = {
-            'additionalMetadata': 'Performance test upload'
-        }
+        files = {'file': ('performance_test.jpg', sample_image_file, 'image/jpeg')}
         
         start_time = time.time()
-        response = requests.post(url, files=files, data=data)
+        response = requests.post(url, files=files)
         end_time = time.time()
         
         response_time = end_time - start_time
         
         assert response.status_code == 200
-        assert response_time < 10.0, f"Upload took too long: {response_time} seconds"
+        assert response_time < 10.0  # Should complete within 10 seconds
         
         print(f"Upload completed in {response_time:.2f} seconds")
 
